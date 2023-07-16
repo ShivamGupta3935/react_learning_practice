@@ -1,11 +1,14 @@
 import Container from '../templates/Container';
 import './Subscription.css'
 import SubscriptionDate from './SubscriptionDate';
+import react,{useState} from  'react';
 const Subscription = (props) => {   
-   let title = props.title;
+// here is two value first a variable and second is function
+   const [title, setTitle] = useState(props.title);
    const onButtonClicked= () => {
-    title = "change title";
-    console.log("button clicked");
+    //calling setTitle method
+    setTitle("Change Title");
+    console.log("button clicked",title);
    }
     return(
         <Container className="subscription">
