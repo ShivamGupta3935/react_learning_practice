@@ -1,0 +1,31 @@
+.new_subscription{
+    background: #1260b1;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.new_subscription button{
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem, 2rem;
+    border: 1px solid #084a8e;
+    color: white;
+    border-radius: 12px;
+    margin-right:  1rem;
+}
+
+.new_subscription button:hover,
+.new_subscription button:active{
+    background-color: #084a8e;
+    border-color: #084a8e;
+}
+
+.new_subscription button.alternative:hover,
+.new_subscription button.alternative:active{
+    background-color: #1260b1;
+}

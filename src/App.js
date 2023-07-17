@@ -2,6 +2,7 @@
 import './App.css';
 import Subscription from './components/subscriptionss/Subscription';
 import Container from './components/templates/Container';
+import NewSubscriptions from './components/subscriptionss/NewSubscription/NewSubscriptions';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
   // let amount = "125.00"
   return (
     <Container className="App">
+      <NewSubscriptions/>
       <Subscription date={subscriptions[0].date} title= {subscriptions[0].title} amount= {subscriptions[0].amount} />
       <Subscription date={subscriptions[1].date} title= {subscriptions[1].title} amount= {subscriptions[1].amount} />
       <Subscription date={subscriptions[2].date} title= {subscriptions[2].title} amount= {subscriptions[2].amount} />
