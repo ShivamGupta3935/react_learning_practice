@@ -9,20 +9,30 @@ const FormSubscription=()=>{
     const titleChangeHandler = (events) => {
         // setUserTitle(events.target.value)
         // console.log("user title ",userTitle)
-        setForm({...form,userDate:events.target.value})
+        // setForm({...form,userDate:events.target.value})
+        setForm((prevState) => {
+            return({...prevState,userTitle:events.target.value})
+        })
         console.log(form);
+
     }
     const dateChangeHandler=(events)=>{
         //   setUserDate(events.target.value)
         //   console.log("User Date : ",userDate);
-        setForm({...form,userAmount:events.target.value})
+        // setForm({...form,userAmount:events.target.value})
+        setForm((prevState) => {
+            return({...prevState,userDate:events.target.value})
+        })
         console.log(form);
 
     }
     const amountChangeHandler=(events)=>{
         //   setUserAmount(events.target.value)
         //   console.log("User Amount is : ",userAmount);
-        setForm({...form,userTitle:events.target.value})
+        // setForm({...form,userTitle:events.target.value})
+        setForm((prevState) => {
+            return({...prevState,userAmount:events.target.value})
+        })
         console.log(form);
 
 
