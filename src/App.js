@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
 import Subscription from './components/subscriptionss/Subscription';
 import Container from './components/templates/Container';
 import NewSubscriptions from './components/subscriptionss/NewSubscription/NewSubscriptions';
-
+import Fitler from './components/subscriptionss/Filter';
 
 const App = () => {
   let subscriptions = [
@@ -24,9 +25,10 @@ const App = () => {
       date:(new Date('2020','01','05')),
       title:"Annual Subscription",
       amount:"1125.70"
-    }
-    
+    }   
 ]
+
+const [filterData, setFilterData]=useState('2020');
   // let date = new Date('2023','07','15') ;
   // let title = "Monthly Subscription"
   // let amount = "125.00"
@@ -34,12 +36,18 @@ const App = () => {
     subscriptions.push(data)
     console.log("Add subscription", data);
   }
+  const FilterChangeHandler = (data)=>{
+       setFilterData(data)
+       console.log("on Filter change", data);
+  }
   return (
     <Container className="App">
       <NewSubscriptions onAddSubscription={addSubscriptionHandler}/>
-      <Subscription date={subscriptions[0].date} title= {subscriptions[0].title} amount= {subscriptions[0].amount} />
-      <Subscription date={subscriptions[1].date} title= {subscriptions[1].title} amount= {subscriptions[1].amount} />
-      <Subscription date={subscriptions[2].date} title= {subscriptions[2].title} amount= {subscriptions[2].amount} />
+      <Fitler onFilterChange={FilterChangeHandler} selectedFilter={filterData}/>
+      {subscriptions.map(subscription=> <Subscription date={subscription.date} title={subscription.title} amount={subscription.amount} /> )}
+      {/* <Subscription date={subscriptions[0].date} title= {subscriptions[0].title} amount= {subscriptions[0].amount} /> */}
+      {/* <Subscription date={subscriptions[1].date} title= {subscriptions[1].title} amount= {subscriptions[1].amount} /> */}
+      {/* <Subscription date={subscriptions[2].date} title= {subscriptions[2].title} amount= {subscriptions[2].amount} /> */}
     </Container>
   );
 }
