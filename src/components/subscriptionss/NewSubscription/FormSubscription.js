@@ -1,5 +1,5 @@
 import './FormSubscription.css'
-import './NewSubscriptions.css'
+import './FormSubscription.css'
 import { useState } from 'react'
 const FormSubscription = (props) => {
     // const [userTitle, setUserTitle] = useState("")
@@ -41,6 +41,7 @@ const FormSubscription = (props) => {
           events.preventDefault();
           const subscriptionObj = {title:form.userTitle,amount:form.userAmount,date:new Date(form.userDate)}
           props.onSave(subscriptionObj)
+        //   props.onCancel();
           console.log("onSubmit :",subscriptionObj);
     }
 
@@ -61,8 +62,9 @@ const FormSubscription = (props) => {
                     <input type='text' value={form.userAmount} onChange={amountChangeHandler}></input>
                 </div>
             </div>
-            <div className='new_subscription  new_subscription_actions'>
-                <button type='submit' className="">Add Subscription</button>
+            <div className=' new_subscription_actions'>
+                <button type='button' className=" danger" onClick={props.onCancel}>Cancel</button>
+                <button type='submit' className="">Save</button>
             </div>
         </form>
     )

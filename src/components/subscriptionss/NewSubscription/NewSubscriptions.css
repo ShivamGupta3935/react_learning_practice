@@ -17,7 +17,8 @@
     color: rgb(232, 226, 226);
     border-radius: 5px;
     margin-right:  1rem;
-    background-color: transparent;
+    background: transparent;    
+
 }
 
 .new_subscription button:hover,
