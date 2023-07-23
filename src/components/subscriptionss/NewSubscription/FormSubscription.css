@@ -37,3 +37,12 @@
     background-color: red !important; 
 }
 
+.new_subscription_control.invalid input{
+        color:red
+}
+.new_subscription_control.invalid label{
+        border-color:red;
+}
+
+
+
