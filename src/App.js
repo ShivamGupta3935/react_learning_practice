@@ -6,6 +6,7 @@ import Subscription from './components/subscriptionss/Subscription';
 import Container from './components/templates/Container';
 import NewSubscriptions from './components/subscriptionss/NewSubscription/NewSubscriptions';
 import Fitler from './components/subscriptionss/Filter';
+import SubscriptionChart from './components/subscriptionss/SubscriptionChart';
 
 const INITIALIZE_SUBSCRIPTION =[
   {
@@ -53,6 +54,7 @@ const filteredSubscriptions=subscriptions.filter((item) =>{
     <Container className="App">
       <NewSubscriptions onAddSubscription={addSubscriptionHandler}/>
       <Fitler onFilterChange={FilterChangeHandler} selectedFilter={filterYear}/>
+    <SubscriptionChart filteredSubscriptions={filteredSubscriptions}/>
       <SubscriptionList subscriptions={filteredSubscriptions}/>
 
 
